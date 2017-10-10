@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports: 
+       - "27017:27017"
+    volumes:
+      - ./data:/data/db
+  manage:
+    image: javierjeronimo/rockmongo
+    container_name: mongo_manage
+    ports:
+       - "27018:80"
